@@ -46,6 +46,18 @@ app.get('/:id', function (req, res) {
     });
 });
 
+app.get('/byUserId/:id', function (req, res) {
+  customers.findOne({
+  where: {UserUserId: req.params.id}
+})
+  .then((data) => {
+    res.status(200).json(data)
+  })
+  .catch((err) => {
+    res.status(400).json(err)
+  });
+});
+
 app.patch('/:id/update', (req, res)=>{
   
   const { 

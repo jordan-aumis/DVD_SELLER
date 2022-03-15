@@ -46,6 +46,18 @@ app.get('/:id', function (req, res) {
     });
 });
 
+// app.get('/name=:name', function (req, res) {
+//   categories.findOne({
+//   where: {name: req.params.name}
+// })
+//   .then((data) => {
+//     res.status(200).json(data)
+//   })
+//   .catch((err) => {
+//     res.status(400).json(err)
+//   });
+// });
+
 app.patch('/:id/update', (req, res)=>{
   
   const { 

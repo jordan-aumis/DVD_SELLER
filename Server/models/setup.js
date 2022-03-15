@@ -23,10 +23,6 @@ customer.hasOne(purchase, {
     onDelete: 'cascade'
 });
 
-staff.hasOne(purchase, {
-    onDelete: 'cascade'
-});
-
 user.hasOne(staff, {
     onDelete: 'cascade'
 });

@@ -9,14 +9,13 @@ app.post('/new', function (req, res) {
     amount,
     purchaseDate,
     CustomerCustomerId,
-    StaffStaffId
+
     } = req.body;
 
     purchases.create({ 
         amount,
         purchaseDate,
         CustomerCustomerId,
-        StaffStaffId
    })
     .then((data) => {
       res.status(200).json(data)
@@ -54,7 +53,6 @@ app.patch('/:id/update', (req, res)=>{
     amount,
     purchaseDate,
     CustomerCustomerId,
-    StaffStaffId
     } = req.body;
      
     purchases.update(
@@ -62,7 +60,7 @@ app.patch('/:id/update', (req, res)=>{
         amount,
         purchaseDate,
         CustomerCustomerId,
-        StaffStaffId
+        FilmFilmId
     },
     {
       where: {purchase_id: req.params.id}

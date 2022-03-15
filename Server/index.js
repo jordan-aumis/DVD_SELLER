@@ -11,6 +11,7 @@ const film = require("./routes/film.controller");
 const customer = require("./routes/customer.controller");
 const category = require("./routes/category.controller");
 const address = require("./routes/address.controller");
+const account = require("./routes/account.controller");
 const bodyParser = require('body-parser')
 
 app.use(cors());
@@ -28,6 +29,8 @@ app.use('/film', film);
 app.use('/customer', customer);
 app.use('/category', category);
 app.use('/address', address);
+app.use('/', account);
+
 
 app.get('/', (req, res)=>{
     res.send("hello world")

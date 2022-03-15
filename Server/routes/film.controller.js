@@ -11,6 +11,7 @@ app.post('/new', function (req, res) {
     release_year,
     replacement_cost,
     rating,
+    stock,
     CategoryCategoryId
     } = req.body;
   
@@ -20,6 +21,7 @@ app.post('/new', function (req, res) {
     release_year,
     replacement_cost,
     rating,
+    stock,
     CategoryCategoryId
    })
     .then((data) => {
@@ -52,6 +54,18 @@ app.get('/:id', function (req, res) {
     });
 });
 
+app.get('/byCategory/:id', function (req, res) {
+  films.findAll({
+  where: {CategoryCategoryId: req.params.id}
+})
+  .then((data) => {
+    res.status(200).json(data)
+  })
+  .catch((err) => {
+    res.status(400).json(err)
+  });
+});
+
 app.patch('/:id/update', (req, res)=>{
   
   const { 
@@ -60,6 +74,7 @@ app.patch('/:id/update', (req, res)=>{
     release_year,
     replacement_cost,
     rating,
+    stock,
     CategoryCategoryId
     } = req.body;
      
@@ -70,6 +85,7 @@ app.patch('/:id/update', (req, res)=>{
         release_year,
         replacement_cost,
         rating,
+        stock,
         CategoryCategoryId
     },
     {

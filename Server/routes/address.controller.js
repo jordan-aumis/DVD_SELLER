@@ -1,6 +1,7 @@
 const express = require("express");
 const db = require('../models/setup');
 const addresses = db.models.Address;
+const users = db.models.User;
 const app = express.Router();
 
 app.post('/new', function (req, res) {
@@ -25,6 +26,7 @@ app.post('/new', function (req, res) {
    })
     .then((data) => {
       res.status(200).json(data)
+
     })
     .catch((err) => {
       res.status(400).json(err)

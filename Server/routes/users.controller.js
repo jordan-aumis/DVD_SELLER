@@ -58,6 +58,7 @@ app.patch('/:id/update', (req, res)=>{
     firstName,
     userName,
     lastName,
+    email,
     AddressAddressId
     } = req.body;
      
@@ -66,6 +67,7 @@ app.patch('/:id/update', (req, res)=>{
         firstName,
         userName,
         lastName,
+        email,
         AddressAddressId
     },
     {
